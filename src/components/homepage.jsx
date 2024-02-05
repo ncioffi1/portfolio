@@ -87,17 +87,29 @@ function homepage() {
                         <>
                             {myData.Projects.map(project => 
                                 <>
-                                    <a className="holder3B" href={project.Link}>
-                                        {/* <a className="pLink" href={project.Link}> */}
-                                            <div onClick={(e) => handleClickProject(e, project.Link)} className="holderP">
+                                    <div className="holder3B" href={project.Link}>
+                                            <a className="holderP" href={project.Link}>
                                                 <img src={imgs[project.ID - 1]} className="img2"></img>
                                                 <div className="holderP2">
+                                                    <div className="holderP3">
+                                                        {project.Team === "SOLO" ? (
+                                                            <p className="pTag1" id="tag1A">{project.Team}</p>
+                                                        ) : (
+                                                            <p className="pTag1" id="tag1B">{project.Team}</p>
+                                                        )}
+                                                        <div className="pEmpty"></div>
+                                                        {project.Type === "APP" ? (
+                                                             <p className="pTag1" id="tag2A">{project.Type}</p>
+                                                        ) : (
+                                                            <p className="pTag1" id="tag2B">{project.Type}</p>
+                                                        )}
+                                                    </div>
                                                     <p className="pText1">{project.Name}</p>
                                                     <p className="pText2">{project.Description}</p>
                                                 </div>
-                                            </div>
+                                            </a>
                                         {/* </a> */}
-                                    </a>
+                                    </div>
                                     <div className="pad2B"></div>
                                 </> 
                             )}

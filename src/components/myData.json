@@ -5,7 +5,7 @@
         "Type": "APP",
         "Team": "GROUP",
         "Name": "TravelAI",
-        "Description": "A Full Stack application that allows users to generate travel suggestions and itineraries based on their preferences.  Powered by ChatGPT!",
+        "Description": "A Full Stack app that allows users to generate travel suggestions and itineraries based on their preferences.  Powered by ChatGPT!",
         "Link": "https://travelaiapp.onrender.com"
       },
       {
