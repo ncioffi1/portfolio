@@ -1,0 +1,44 @@
+{
+    "Projects": [
+      {
+        "ID": "1",
+        "Type": "APP",
+        "Team": "GROUP",
+        "Name": "TravelAI",
+        "Description": "A Full Stack application that allows users to generate travel suggestions and itineraries based on their preferences.  Powered by ChatGPT!",
+        "Link": "https://travelaiapp.onrender.com"
+      },
+      {
+        "ID": "2",
+        "Type": "APP",
+        "Team": "SOLO",
+        "Name": "Webium",
+        "Description": "A clone of the popular article sharing website Medium, this site allows users to read and write articles.",
+        "Link": "https://webium.onrender.com"
+      },
+      {
+        "ID": "3",
+        "Type": "GAME",
+        "Team": "SOLO",
+        "Name": "Battlesheep",
+        "Description": "A quirky and fun spin on the game Battleship.  Can you find all the sheeps?",
+        "Link": "https://ncioffi1.github.io/Battlesheep/"
+      },
+      {
+        "ID": "4",
+        "Type": "APP",
+        "Team": "SOLO",
+        "Name": "Dino Timer",
+        "Description": "Which dino will win the race?  Run the timer and place your bets!",
+        "Link": "https://ncioffi1.github.io/Dino_Timer/"
+      },
+      {
+        "ID": "5",
+        "Type": "GAME",
+        "Team": "SOLO",
+        "Name": "Cool People Club",
+        "Description": "A 3D Bullet Hell Adventure!",
+        "Link": "https://store.steampowered.com/app/1941340/Cool_People_Club/"
+      }
+    ]
+}
