@@ -9,6 +9,7 @@ import img2 from "../assets/Webium.png"
 import img3 from "../assets/Battlesheep.png"
 import img4 from "../assets/DinoTimer.png"
 import img5 from "../assets/CoolPeopleClub.png"
+import nicksPicture from "../assets/nicks_picture.jpg"
 
 function homepage() {
     const [section, setSection] = useState("PROJECTS");
@@ -62,11 +63,9 @@ function homepage() {
             {section === "ABOUT" ? (
                 <>
                     <div className="holder3">
-                        <div className="img1">
-
-                        </div>
+                        <img className="img1" src={nicksPicture} />                            
                     </div>
-                    <div className="pad2"></div>
+                    <div className="pad2C"></div>
                     <div className="holder3">
                         <div className="holderB">
                             <p className="bodyText2">
@@ -77,18 +76,18 @@ function homepage() {
                             </p>
                         </div>
                     </div>
-                    <div className="pad2"></div>
+                    <div className="pad2C"></div>
                 </>
             ) : (
                 <>
-                    <div className="pad2"></div>
+                    {/* <div className="pad2"></div> */}
                     <div className="pad2"></div>
                     {/* <button className="myButton" onClick={(e) => checkData(e)}>Check Data</button> */}
                     {myData !== null && myData !== undefined ? (
                         <>
                             {myData.Projects.map(project => 
                                 <>
-                                    <a className="holder3" href={project.Link}>
+                                    <a className="holder3B" href={project.Link}>
                                         {/* <a className="pLink" href={project.Link}> */}
                                             <div onClick={(e) => handleClickProject(e, project.Link)} className="holderP">
                                                 <img src={imgs[project.ID - 1]} className="img2"></img>
