@@ -6,7 +6,12 @@
         "Team": "GROUP",
         "Name": "TravelAI",
         "Description": "A Full Stack app that allows users to generate travel suggestions and itineraries based on their preferences.  Powered by ChatGPT!",
-        "Link": "https://travelaiapp.onrender.com"
+        "Link": "https://travelaiapp.onrender.com",
+        "Resources": [
+          "OpenAI",
+          "JavaScript",
+          "MERN"
+        ]
       },
       {
         "ID": "2",
@@ -14,7 +19,12 @@
         "Team": "SOLO",
         "Name": "Webium",
         "Description": "A clone of the popular article sharing website Medium, this site allows users to read and write articles.",
-        "Link": "https://webium.onrender.com"
+        "Link": "https://webium.onrender.com",
+        "Resources": [
+          "JavaScript",
+          "React",
+          "Rails"
+        ]
       },
       {
         "ID": "3",
@@ -22,7 +32,12 @@
         "Team": "SOLO",
         "Name": "Battlesheep",
         "Description": "A quirky and fun spin on the game Battleship.  Can you find all the sheeps?",
-        "Link": "https://ncioffi1.github.io/Battlesheep/"
+        "Link": "https://ncioffi1.github.io/Battlesheep/",
+        "Resources": [
+          "JavaScript",
+          "HTML",
+          "CSS"
+        ]
       },
       {
         "ID": "4",
@@ -30,7 +45,12 @@
         "Team": "SOLO",
         "Name": "Dino Timer",
         "Description": "Which dino will win the race?  Run the timer and place your bets!",
-        "Link": "https://ncioffi1.github.io/Dino_Timer/"
+        "Link": "https://ncioffi1.github.io/Dino_Timer/",
+        "Resources": [
+          "JavaScript",
+          "HTML",
+          "CSS"
+        ]
       },
       {
         "ID": "5",
@@ -38,7 +58,11 @@
         "Team": "SOLO",
         "Name": "Cool People Club",
         "Description": "A 3D Bullet Hell Adventure!",
-        "Link": "https://store.steampowered.com/app/1941340/Cool_People_Club/"
+        "Link": "https://store.steampowered.com/app/1941340/Cool_People_Club/",
+        "Resources": [
+          "C#",
+          "Unity"
+        ]
       }
     ]
 }
