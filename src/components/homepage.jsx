@@ -5,6 +5,7 @@ import { Navigate } from 'react-router';
 // import useNavigate from 'react-router-dom';
 
 import './homepage.css';
+import '../reset.css';
 import myData from './myData.json';
 import img1 from "../assets/TravelAI.png"
 import img2 from "../assets/Webium.png"
@@ -18,7 +19,8 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
 
 function homepage() {
-    const [section, setSection] = useState("ABOUT");
+    const [section, setSection] = useState("");
+    const [activate, setActivate] = useState(true);
     const imgs = [img1, img2, img3, img4, img5];
     const [navigating, setNavigating] = useState(null);
     const [goToSite, setGoToSite] = useState("");
@@ -26,6 +28,31 @@ function homepage() {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     // gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
     
+    function scrolling(e) {
+        console.log("scroll detected");
+    }
+    // function settingSection() {
+    //     let scrollValue = window.scrollY;
+    //     if (scrollValue < 141 ) {
+    //         setSection("HOME");
+    //     } else if (scrollValue >= 141 && scrollValue < 267) {
+    //         // ABOUT 
+    //         console.log(section);
+    //         console.log("section");
+    //         if (section !== "ABOUT") {
+    //             setSection("ABOUT");
+    //             console.log("ABOUT");
+    //         }
+    //     } else {
+    //         // PROJECTS
+    //         console.log(section);
+    //         console.log("section");
+    //         if (section !== "PROJECTS") {
+    //             setSection("PROJECTS");
+    //             console.log("PROJECTS");
+    //         }
+    //     }
+    // }
     function handleChangeSection(e, newSection) {
         e.preventDefault();
         console.log("click!");
@@ -33,10 +60,24 @@ function homepage() {
             gsap.to(window, { duration: 1, scrollTo: {x: 0, y: 0 }});
             // window.scrollTo(0, 0);
         } else if (newSection === "ABOUT") {
-            gsap.to(window, { duration: 1, scrollTo: {x: 0, y: 200 }});
+            let scrollValue = window.scrollY;
+            console.log(scrollValue);
+            console.log(window.innerHeight * 0.2);
+            if (scrollValue < window.innerHeight * 0.2 ) {
+                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 0.2 }});
+            } else {
+                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 0.2 }});
+            }
             // window.scrollTo(0, 200);
         } else if (newSection === "PROJECTS") {
-            gsap.to(window, { duration: 1, scrollTo: {x: 0, y: 350 }});
+            let scrollValue = window.scrollY;
+            console.log(scrollValue);
+            console.log(window.innerHeight * 0.4);
+            if (scrollValue < window.innerHeight * 0.4) {
+                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 0.4  }});
+            } else {
+                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 0.4  }});
+            }
             // window.scrollTo(0, 0);
         }
         // setSection(newSection);
@@ -47,92 +88,69 @@ function homepage() {
     }
 
     useEffect(() => {
-        if (section === "ABOUT") {
-            let tl = gsap.timeline({
-                // yes, we can add it to an entire timeline!
-                scrollTrigger: {
-                    // scroller: ".container",
-                  trigger: ".holder1R",
-                  pin: false, // pin the trigger element while active
-                    start: "top top", // start when top of trigger hits top of viewport
-                    end: "+=100%", // end when bottom of trigger hits top of viewport
-                    scrub: true, // smooth scrubbing effect
-                    // markers: true
-                    pinSpacing: false,
-                    // preventOverlaps: true,
-                    // snap: {y: {values: [2000]}}
-                    // snap: {
-                    //     // snapTo: [0, 0.24, 0.27, 0.45, 0.62, 0.74, 1],
-                    //     snapTo: [0, 0.24, 0.27, 0.45, 0.52, 0.66, 1],
-                    //     duration: 0, 
-                    //     delay: 0 
-                    //     // ease: "power1.out"
-                        
-                    // }
-                    // snap: {
-                    //     snapTo: 0.5,
-                    //     duration: 0.02,
-                    //     ease: "power1.inOut"
-                    // }
-                },
-                // scrollTrigger: {
-                //     trigger: ".holder1R2",
-                //     pin: true, // pin the trigger element while active
-                //     start: "top top", // start when top of trigger hits top of viewport
-                //     end: "+=100%", // end when bottom of trigger hits top of viewport
-                //     scrub: true, // smooth scrubbing effect
-                //     // markers: true
-                // },
-                // scrollTrigger: {
-                //     trigger: ".holder1R3",
-                //     pin: true, // pin the trigger element while active
-                //     start: "top top", // start when top of trigger hits top of viewport
-                //     end: "+=100%", // end when bottom of trigger hits top of viewport
-                //     scrub: true, // smooth scrubbing effect
-                //     // markers: true
-                //     },
-              });
-            // let tl2 = gsap.timeline({
-            //     // yes, we can add it to an entire timeline!
-            //     scrollTrigger: {
-            //       trigger: ".holder1R2",
-            //       pin: true, // pin the trigger element while active
-            //         start: "top top", // start when top of trigger hits top of viewport
-            //         end: "+=100%", // end when bottom of trigger hits top of viewport
-            //         scrub: true, // smooth scrubbing effect
-            //         // markers: true
-            //         pinSpacing: false
-            //     },
-            //   });
-            // let tl3 = gsap.timeline({
-            //     // yes, we can add it to an entire timeline!
-            //     scrollTrigger: {
-            //         trigger: ".holder1R3",
-            //         pin: true, // pin the trigger element while active
-            //           start: "top top", // start when top of trigger hits top of viewport
-            //           end: "+=100%", // end when bottom of trigger hits top of viewport
-            //           scrub: true, // smooth scrubbing effect
-            //           // markers: true
-            //       },
-            // })
-            tl.from(".holder1R", { delay: 0.2, y: 0, opacity: 1, duration: .4, ease: "power1"})
-              .to(".holder1R", {delay: 0.2, y: -20, opacity: 0, duration: .4, ease: "power1"})
-            tl.from(".holder1R2", { delay: 0.2, y: 20, opacity: 0, autoAlpha: 0, duration: .4, ease: "power1"})
-              .to("#bgColorID", {backgroundColor: "#feeafa", duration: 0.4, ease: "power1"}, "<")
-              .to(".holder1R2", {delay: 0.2, y: -0, opacity: 1, autoAlpha: 1, duration: .4, ease: "power1"})
-              
-              .to(".holder1R2", {delay: 0.2, y: -20, opacity: 0, autoAlpha: 0, duration: .4, ease: "power1"})
-            tl.from(".holder1R3", { delay: 0.2, y: 20, opacity: 0, autoAlpha: 0, duration: .4, ease: "power1"})
-              .to("#bgColorID", {backgroundColor: "#dee2ff", duration: 0.4, ease: "power1"}, "<")
-              .to(".holder1R3", {delay: 0.2, y: -0, opacity: 1, autoAlpha: 1, duration: .4, ease: "power1"})
-              .to(".holder1R3", {delay: 0.2, y: -800, opacity: 1, autoAlpha: 1, duration: 5, ease: "none"});
-            gsap.to(".textHome2", { delay: 0.2, y: -20, opacity: 1, duration: 1, ease: "power1" });
-            gsap.to(".textHome3", { delay: 0.7, y: -20, opacity: 1, duration: 1, ease: "power1" });
-            gsap.to(".textHome4", { delay: 1.2, y: -20, opacity: 1, duration: 1, ease: "power1" });
-            gsap.to(".tqIcons", { delay: 1.2, y: -20, opacity: 1, duration: 1, ease: "power1" });
-            
+        if (section === "HOME") {
+            gsap.to(".titleText2A", {color: "#808080", duration: .5, ease: "power1"})
+            gsap.to(".titleText2A", {color: "#808080", duration: .5, ease: "power1"})
+        } else if (section === "ABOUT") {
+            gsap.to(".titleText2A", {color: "#000000", duration: .5, ease: "power1"})
+            gsap.to(".titleText2B", {color: "#808080", duration: .5, ease: "power1"})
+        } else if (section === "PROJECTS") {
+            gsap.to(".titleText2A", {color: "#808080", duration: .5, ease: "power1"})
+            gsap.to(".titleText2B", {color: "#000000", duration: .5, ease: "power1"})
         }
       }, [section])
+    useEffect(() => {
+    // if (activate) {
+        let tl = gsap.timeline({
+            // yes, we can add it to an entire timeline!
+            scrollTrigger: {
+                // scroller: ".container",
+                trigger: ".holder1R",
+            //   pin: false, // pin the trigger element while active
+                start: "top top", // start when top of trigger hits top of viewport
+                // end: "bottom bottom",
+                end: "+=100%", // end when bottom of trigger hits top of viewport
+                scrub: true, // smooth scrubbing effect
+                // markers: true
+                // pinSpacing: false,
+
+                // preventOverlaps: true,
+                // snap: {y: {values: [2000]}}
+                snap: {
+                    snapTo: [0, 0.2, 0.4, 0.61, 0.71, 0.8, 1],
+                    duration: 0, 
+                    delay: 0,
+                    markers: true
+                    // ease: "power1.out"
+                }
+            },
+        });
+        tl.from(".holder1R", { delay: 0.2, y: 0, opacity: 1, duration: .4, ease: "power1"})
+            .add( function(){setSection("HOME")})
+            .add( function(){console.log("home")})
+            .to(".holder1R", {delay: 0.2, y: -20, opacity: 0, duration: .4, ease: "power1"})
+        tl.from(".holder1R2", { delay: 0.2, y: 20, opacity: 0, autoAlpha: 0, duration: .4, ease: "power1"})
+            .to("#bgColorID", {backgroundColor: "#feeafa", duration: 0.4, ease: "power1"}, "<")
+            .add( function(){setSection("ABOUT")})
+            .add( function(){console.log("about")})
+            .to(".holder1R2", {delay: 0.2, y: -0, opacity: 1, autoAlpha: 1, duration: .4, ease: "power1"})
+            .to(".holder1R2", {delay: 0.2, y: -20, opacity: 0, autoAlpha: 0, duration: .4, ease: "power1"})
+            .add( function(){setSection("ABOUT")})
+            .add( function(){console.log("about")})
+        tl.from(".holder1R3", { delay: 0.2, y: 20, opacity: 0, autoAlpha: 0, duration: .4, ease: "power1"})
+            .to("#bgColorID", {backgroundColor: "#dee2ff", duration: 0.4, ease: "power1"}, "<")
+            .add( function(){setSection("PROJECTS")})
+            .add( function(){console.log("projects")})
+            .to(".holder1R3", {delay: 0.2, y: -0, opacity: 1, autoAlpha: 1, duration: .4, ease: "power1"})
+            
+            .to(".holder1R3", {delay: 0.2, y: -1000, opacity: 1, autoAlpha: 1, duration: 5, ease: "none"})
+            .to(".myFooter", {delay: 0, opacity: 1, autoAlpha: 1, duration: 1, ease: "none"});
+        gsap.to(".textHome2", { delay: 0.2, y: -20, opacity: 1, duration: 1, ease: "power1" });
+        gsap.to(".textHome3", { delay: 0.7, y: -20, opacity: 1, duration: 1, ease: "power1" });
+        gsap.to(".textHome4", { delay: 1.2, y: -20, opacity: 1, duration: 1, ease: "power1" });
+        gsap.to(".tqIcons", { delay: 1.2, y: -20, opacity: 1, duration: 1, ease: "power1" });
+    // }
+    }, [])
 
     document.onclick = (e) => {
         console.log(e.target.className)
@@ -140,7 +158,8 @@ function homepage() {
 
     return (
         <> 
-        <div className="myRoot">
+        
+        <div className="myRoot" onScroll={(e) => scrolling(e)}>
             <div className="topbarC">
                 <div className="topbar">
                     
@@ -148,17 +167,8 @@ function homepage() {
                         <p onClick={(e) => handleChangeSection(e, "HOME")} className="titleText">nick cioffi</p>
                     </div>
                     <div className="holder2">
-                        {section === "ABOUT" ? (
-                            <>
-                                <p onClick={(e) => handleChangeSection(e, "ABOUT")} className="titleText2A">about</p>
-                                <p onClick={(e) => handleChangeSection(e, "PROJECTS")} className="titleText2B">projects</p>
-                            </>
-                        ) : (
-                            <>
-                                <p onClick={(e) => handleChangeSection(e, "ABOUT")} className="titleText2B">about</p>
-                                <p onClick={(e) => handleChangeSection(e, "PROJECTS")}className="titleText2A">projects</p>
-                            </>
-                        )}
+                        <p onClick={(e) => handleChangeSection(e, "ABOUT")} className="titleText2A">about</p>
+                        <p onClick={(e) => handleChangeSection(e, "PROJECTS")} className="titleText2B">projects</p>
                     </div>
                 </div>
                 <div className='holderLTop'>
@@ -170,7 +180,7 @@ function homepage() {
             
             <div className="scroll" id="bgColorID">
 
-            {section === "ABOUT" ? (
+            {activate === true ? (
                 <>
                     <section className="holder1R">
                         <div className="holder1Q">
@@ -200,14 +210,24 @@ function homepage() {
                             <div className="shelfEmpty" />
                             <div className="holder1C">
                                 <div className="holderX">
-                                    <img className="img3A" src={img1} /> 
-                                    <img className="img3A" src={img2} /> 
-                                    
+                                    <a href="https://travelaiapp.onrender.com">
+                                        <img className="img3A" src={img1} /> 
+                                    </a>
+                                    <a href="https://webium.onrender.com">
+                                        <img className="img3A" src={img2} /> 
+                                    </a>
                                 </div>
                                 <div className="holderX">
-                                    <img className="img3B" src={img3B} /> 
-                                    <img className="img3A" src={img4} /> 
-                                    <img className="img3A" src={img5} /> 
+                                    <a href="https://ncioffi1.github.io/Battlesheep/">
+                                        <img className="img3B" src={img3B} /> 
+                                    </a>
+                                    <a href="https://ncioffi1.github.io/Dino_Timer/">
+                                        <img className="img3A" src={img4} /> 
+                                    </a>
+                                    <a href="https://store.steampowered.com/app/1941340/Cool_People_Club/">
+                                        <img className="img3A" src={img5} /> 
+                                    </a>
+                                    
                                 </div>
                           
                                 <div className="holderL">
@@ -286,17 +306,55 @@ function homepage() {
                                     
                                 </> 
                             )}
-                            <div className="myFooter">
+                        </>
+                        ) : (
+                            <>
+                            </>
+                        )}
+                    </section>
+                    <div className="myFooter">
+                        <div className="holder1FA">
+                            <div className="holder1FB">
+                                <p className="fHeader">Projects</p>
+                                <a href="https://travelaiapp.onrender.com">
+                                    <p className="fText">TravelAI</p>
+                                </a>
+                                <a href="https://webium.onrender.com">
+                                    <p className="fText">Webium</p>
+                                </a>
+                                <a href="https://ncioffi1.github.io/Battlesheep/">
+                                    <p className="fText">Battlesheep</p>
+                                </a>
+                                <a href="https://ncioffi1.github.io/Dino_Timer/">
+                                    <p className="fText">Dino Timer</p>
+                                </a>
+                                <a href="https://store.steampowered.com/app/1941340/Cool_People_Club/">
+                                    <p className="fText">Cool People Club</p>
+                                </a>
+                                
+                            </div>
+                            <div className="holder1FB">
+                                <p className="fHeader">Links</p>
+                                <a href="https://github.com/ncioffi1">
+                                    <p className="fText">GitHub</p>
+                                </a>
+                                <a href="https://www.linkedin.com/in/nicholas-cioffi-373913139/">
+                                    <p className="fText">LinkedIn</p>
+                                </a>
+                            </div>
+                            <div className="holder1FB">
+                                <p className="fHeader">Contact</p>
+                                <a href="mailto:imnickcioffi@gmail.com">
+                                    <p className="fText">imnickcioffi@gmail.com</p>
+                                </a>
+                                <a href="https://docs.google.com/document/d/1Z3Q-wDLu397jQ2ojGUZAOS7Jg-DBot2-xx5L-3GTYd4/edit?usp=sharing">
+                                    <p className="fText">Resume</p>
+                                </a>
+                            </div>  
+                        </div>
                                                             
 
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                        </>
-                    )}
-                        
-                    </section>
+                    </div>
                     
                     {/* <div className="pad2C"></div>
                     <div className="pad2C"></div>
