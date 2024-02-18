@@ -8,12 +8,16 @@ import './homepage.css';
 import '../reset.css';
 import myData from './myData.json';
 import img1 from "../assets/TravelAI.png"
+import img1B from "../assets/TravelAI_B.png"
 import img2 from "../assets/Webium.png"
+import img2B from "../assets/Webium_B.png"
 import img3 from "../assets/Battlesheep.png"
 import img3B from "../assets/BattlesheepV7.png"
 // import img3C from "../assets/BattlesheepV2.png"
 import img4 from "../assets/DinoTimer.png"
+import img4B from "../assets/DinoTimer_B.png"
 import img5 from "../assets/CoolPeopleClub.png"
+import img5B from "../assets/CoolPeopleClub_B.png"
 import nicksPicture from "../assets/nicks_picture.jpg"
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
@@ -62,21 +66,25 @@ function homepage() {
         } else if (newSection === "ABOUT") {
             let scrollValue = window.scrollY;
             console.log(scrollValue);
-            console.log(window.innerHeight * 0.2);
-            if (scrollValue < window.innerHeight * 0.2 ) {
-                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 0.2 }});
+            console.log(window.innerHeight);
+            console.log(window.innerHeight * 11);
+            console.log(window.innerHeight * 11 * 0.4);
+            if (scrollValue < window.innerHeight * 11 * 0.4 ) {
+                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 11 * 0.4 }});
             } else {
-                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 0.2 }});
+                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 11 * 0.4 }});
             }
             // window.scrollTo(0, 200);
         } else if (newSection === "PROJECTS") {
             let scrollValue = window.scrollY;
             console.log(scrollValue);
-            console.log(window.innerHeight * 0.4);
-            if (scrollValue < window.innerHeight * 0.4) {
-                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 0.4  }});
+            console.log(window.innerHeight);
+            console.log(window.innerHeight * 11);
+            console.log(window.innerHeight * 11 * 0.82);
+            if (scrollValue < window.innerHeight * 11 * 0.82) {
+                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 11 *  0.82  }});
             } else {
-                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 0.4  }});
+                gsap.to(window, { duration: 1, scrollTo: {x: 0, y: window.innerHeight * 11 * 0.82  }});
             }
             // window.scrollTo(0, 0);
         }
@@ -109,7 +117,7 @@ function homepage() {
             //   pin: false, // pin the trigger element while active
                 start: "top top", // start when top of trigger hits top of viewport
                 // end: "bottom bottom",
-                end: "+=100%", // end when bottom of trigger hits top of viewport
+                end: "+=1100%", // end when bottom of trigger hits top of viewport
                 scrub: true, // smooth scrubbing effect
                 // markers: true
                 // pinSpacing: false,
@@ -117,7 +125,8 @@ function homepage() {
                 // preventOverlaps: true,
                 // snap: {y: {values: [2000]}}
                 snap: {
-                    snapTo: [0, 0.2, 0.4, 0.61, 0.71, 0.8, 1],
+                    snapTo: [0, 0.4, 0.82, 0.87, 0.895, 0.918, 1],
+                    // snapTo: [0, 0.2, 0.4, 0.61, 0.71, 0.8, 1],
                     duration: 0, 
                     delay: 0,
                     markers: true
@@ -125,26 +134,26 @@ function homepage() {
                 }
             },
         });
-        tl.from(".holder1R", { delay: 0.2, y: 0, opacity: 1, duration: .4, ease: "power1"})
+        tl.from(".holder1R", { delay: 0.2, y: 0, opacity: 1, duration: 30, ease: "power1"})
             .add( function(){setSection("HOME")})
             .add( function(){console.log("home")})
-            .to(".holder1R", {delay: 0.2, y: -20, opacity: 0, duration: .4, ease: "power1"})
-        tl.from(".holder1R2", { delay: 0.2, y: 20, opacity: 0, autoAlpha: 0, duration: .4, ease: "power1"})
-            .to("#bgColorID", {backgroundColor: "#feeafa", duration: 0.4, ease: "power1"}, "<")
+            .to(".holder1R", {delay: 0.2, y: -20, opacity: 0, duration: 30, ease: "power1"})
+        tl.from(".holder1R2", { delay: 0.2, y: 20, opacity: 0, autoAlpha: 0, duration: 30, ease: "power1"})
+            .to("#bgColorID", {backgroundColor: "#feeafa", duration: 15, ease: "power1"}, "<")
             .add( function(){setSection("ABOUT")})
             .add( function(){console.log("about")})
-            .to(".holder1R2", {delay: 0.2, y: -0, opacity: 1, autoAlpha: 1, duration: .4, ease: "power1"})
-            .to(".holder1R2", {delay: 0.2, y: -20, opacity: 0, autoAlpha: 0, duration: .4, ease: "power1"})
+            .to(".holder1R2", {delay: 0.2, y: -0, opacity: 1, autoAlpha: 1, duration: 30, ease: "power1"})
+            .to(".holder1R2", {delay: 0.2, y: -20, opacity: 0, autoAlpha: 0, duration: 30, ease: "power1"})
             .add( function(){setSection("ABOUT")})
             .add( function(){console.log("about")})
-        tl.from(".holder1R3", { delay: 0.2, y: 20, opacity: 0, autoAlpha: 0, duration: .4, ease: "power1"})
-            .to("#bgColorID", {backgroundColor: "#dee2ff", duration: 0.4, ease: "power1"}, "<")
+        tl.from(".holder1R3", { delay: 0.2, y: 20, opacity: 0, autoAlpha: 0, duration: 30, ease: "power1"})
+            .to("#bgColorID", {backgroundColor: "#dee2ff", duration: 30, ease: "power1"}, "<")
             .add( function(){setSection("PROJECTS")})
             .add( function(){console.log("projects")})
-            .to(".holder1R3", {delay: 0.2, y: -0, opacity: 1, autoAlpha: 1, duration: .4, ease: "power1"})
+            .to(".holder1R3", {delay: 0.2, y: -0, opacity: 1, autoAlpha: 1, duration: 30, ease: "power1"})
             
-            .to(".holder1R3", {delay: 0.2, y: -1000, opacity: 1, autoAlpha: 1, duration: 5, ease: "none"})
-            .to(".myFooter", {delay: 0, opacity: 1, autoAlpha: 1, duration: 1, ease: "none"});
+            .to(".holder1R3", {delay: 0.2, y: -1000, opacity: 1, autoAlpha: 1, duration: 30, ease: "none"})
+            .to(".myFooter", {delay: 0, opacity: 1, autoAlpha: 1, duration: 15, ease: "none"});
         gsap.to(".textHome2", { delay: 0.2, y: -20, opacity: 1, duration: 1, ease: "power1" });
         gsap.to(".textHome3", { delay: 0.7, y: -20, opacity: 1, duration: 1, ease: "power1" });
         gsap.to(".textHome4", { delay: 1.2, y: -20, opacity: 1, duration: 1, ease: "power1" });
@@ -186,7 +195,7 @@ function homepage() {
                         <div className="holder1Q">
                             {/* <p className="tq1">Hey!  My name is</p> */}
                             <div className="tqPad"></div>
-                            <div className="tqPadTop"></div>
+                            <div className="tqPadTop" id="nothin"></div>
                             {/* <p className="tq1">welcome to my page!  my name is</p> */}
                             <p className="textHome2">nick cioffi</p>
                             <p className="textHome3">full stack developer</p>
@@ -205,16 +214,16 @@ function homepage() {
                             
                             {/* <img className="img1" src={nicksPicture} />                             */}
                         </div>
-                        <div className="holder1Q">
+                        <div className="holder1Q" id="center">
                             <div className="tqPadTop"></div>
                             <div className="shelfEmpty" />
                             <div className="holder1C">
                                 <div className="holderX">
                                     <a href="https://travelaiapp.onrender.com">
-                                        <img className="img3A" src={img1} /> 
+                                        <img className="img3A" src={img1B} /> 
                                     </a>
                                     <a href="https://webium.onrender.com">
-                                        <img className="img3A" src={img2} /> 
+                                        <img className="img3A" src={img2B} /> 
                                     </a>
                                 </div>
                                 <div className="holderX">
@@ -222,10 +231,12 @@ function homepage() {
                                         <img className="img3B" src={img3B} /> 
                                     </a>
                                     <a href="https://ncioffi1.github.io/Dino_Timer/">
-                                        <img className="img3A" src={img4} /> 
+                                        <div className="img3Aholder">
+                                            <img className="img3A" src={img4B} /> 
+                                        </div>
                                     </a>
                                     <a href="https://store.steampowered.com/app/1941340/Cool_People_Club/">
-                                        <img className="img3A" src={img5} /> 
+                                        <img className="img3A" src={img5B} /> 
                                     </a>
                                     
                                 </div>
@@ -237,22 +248,28 @@ function homepage() {
                         </div>
                     </section>
                     <section className="holder1R2">
-                        <div className="tqPadAbout"></div>
+                        {/* <div className="tqPadAbout"></div> */}
                         <div className="holder1Rx">
                             <div className="holder1Q">
+                                <div className="tqPadAbout" id="about"></div>
                                 <p className="textHome2B">about me</p>
                                 <div className="tqPadAbout2"></div>
                                 <p className="textHome3B">As a full-stack developer, I’m fueled by an unending hunger to innovate, and to see projects through to the end.  This often involves tough choices, learning on the fly, and taking ownership of a project’s quality.  </p>
                                 <div className="tqPadAbout3"></div>
                                 <p className="textHome3B">I’ve made a number of different projects so far, some with teams, some on my own.  To each project, I bring the same creative mindset, and the same work ethic, and I always look forward to bringing those qualities to each role.</p>
                             </div>
-                            <div className="holder1Q">
+                            <div className="holder1Q" id="center2">
+                                <div className="tqPadAbout"></div>
                                 <div className="imgHolder">
                                     <img className="imgPortrait" src={nicksPicture} /> 
                                     <p className="imgText">this is me</p>
                                 </div>
-                                
-                                
+                                <div className='techHolderA'>
+                                    <div className="techHolder">
+                                        <p className="imgText" id="tech">tech stack:</p>
+                                        <p className="textHome3B" id="tech2">JavaScript, Ruby on Rails, Node.js, React.js, MongoDB, PostgreSQL, C#, and more!</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -345,7 +362,7 @@ function homepage() {
                             <div className="holder1FB">
                                 <p className="fHeader">Contact</p>
                                 <a href="mailto:imnickcioffi@gmail.com">
-                                    <p className="fText">imnickcioffi@gmail.com</p>
+                                    <p className="fText">Email</p>
                                 </a>
                                 <a href="https://docs.google.com/document/d/1Z3Q-wDLu397jQ2ojGUZAOS7Jg-DBot2-xx5L-3GTYd4/edit?usp=sharing">
                                     <p className="fText">Resume</p>
