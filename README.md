@@ -1,8 +1,17 @@
-# React + Vite
+# Nick Cioffi's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Check out the [Live Site!](https://webium.onrender.com/)
 
-Currently, two official plugins are available:
+# Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Hey!  You've found my portfolio repository.  That's awesome, dude.
+
+This portfolio was created with JavaScript, React.js, and HTML / CSS.  It also utilizes the JS animation library GSAP.  The GSAP bits took quite a bit of tweaking, but overall I'm happy with how it turned out!
+
+I mainly built this as an exercise in getting familiar with JavaScript animations to potentially give a higher bit of polish to my sites.  
+
+Thanks for reading!
+
+
+
+
