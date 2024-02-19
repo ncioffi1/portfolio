@@ -603,6 +603,7 @@
     padding: 0;
     padding-top: 50px;
     margin: 0;
+    width: 420px;
 }
 #tech2 {
     padding: 0;
@@ -654,6 +655,9 @@
     }
     .textHome3B {
         font-size: 20px;
+        width: 360px;
+    }
+    #tech {
         width: 360px;
     }
     .imgText {
@@ -713,6 +717,9 @@
     .textHome3B {
         margin-left: 90px;
         font-size: 18px;
+        width: 300px;
+    }
+    #tech {
         width: 300px;
     }
     .imgText {
@@ -779,6 +786,9 @@
     .textHome3B {
         margin-left: 60px;
         font-size: 18px;
+        width: 240px;
+    }
+    #tech {
         width: 240px;
     }
     .imgText {
@@ -860,6 +870,9 @@
     .textHome3B {
         margin-left: 60px;
         font-size: 14px;
+        width: 190px;
+    }
+    #tech {
         width: 190px;
     }
     .imgText {
