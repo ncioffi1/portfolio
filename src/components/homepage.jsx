@@ -7,10 +7,10 @@ import { Navigate } from 'react-router';
 import './homepage.css';
 import '../reset.css';
 import myData from './myData.json';
-import img1 from "../assets/TravelAI.png"
-import img1B from "../assets/TravelAI_B.png"
-import img2 from "../assets/Webium.png"
-import img2B from "../assets/Webium_B.png"
+import img1 from "../assets/warguy-icon1.png"
+import img1B from "../assets/warguy_B.png"
+import img2 from "../assets/clanker-icon1.png"
+import img2B from "../assets/clanker_B.png"
 import img3 from "../assets/Battlesheep.png"
 import img3B from "../assets/BattlesheepV7.png"
 // import img3C from "../assets/BattlesheepV2.png"
@@ -219,10 +219,10 @@ function homepage() {
                             <div className="shelfEmpty" />
                             <div className="holder1C">
                                 <div className="holderX">
-                                    <a href="https://travelaiapp.onrender.com">
+                                    <a href="https://coolturtle.itch.io/war-guy">
                                         <img className="img3A" src={img1B} /> 
                                     </a>
-                                    <a href="https://webium.onrender.com">
+                                    <a href="https://the-benbot.itch.io/cleaning-with-clanker">
                                         <img className="img3A" src={img2B} /> 
                                     </a>
                                 </div>
@@ -333,11 +333,11 @@ function homepage() {
                         <div className="holder1FA">
                             <div className="holder1FB">
                                 <p className="fHeader">Projects</p>
-                                <a href="https://travelaiapp.onrender.com">
-                                    <p className="fText">TravelAI</p>
+                                <a href="https://coolturtle.itch.io/war-guy">
+                                    <p className="fText">War Guy</p>
                                 </a>
-                                <a href="https://webium.onrender.com">
-                                    <p className="fText">Webium</p>
+                                <a href="https://the-benbot.itch.io/cleaning-with-clanker">
+                                    <p className="fText">Cleaning With Clanker</p>
                                 </a>
                                 <a href="https://ncioffi1.github.io/Battlesheep/">
                                     <p className="fText">Battlesheep</p>
@@ -348,7 +348,6 @@ function homepage() {
                                 <a href="https://store.steampowered.com/app/1941340/Cool_People_Club/">
                                     <p className="fText">Cool People Club</p>
                                 </a>
-                                
                             </div>
                             <div className="holder1FB">
                                 <p className="fHeader">Links</p>
@@ -364,7 +363,7 @@ function homepage() {
                                 <a href="mailto:imnickcioffi@gmail.com">
                                     <p className="fText">Email</p>
                                 </a>
-                                <a href="https://docs.google.com/document/d/1Z3Q-wDLu397jQ2ojGUZAOS7Jg-DBot2-xx5L-3GTYd4/edit?usp=sharing">
+                                <a href={`${import.meta.env.BASE_URL}docs/nick-cioffi-resume-2026.pdf`} target="_blank">
                                     <p className="fText">Resume</p>
                                 </a>
                             </div>  

@@ -2,28 +2,26 @@
     "Projects": [
       {
         "ID": "1",
-        "Type": "APP",
-        "Team": "GROUP",
-        "Name": "TravelAI",
-        "Description": "A Full Stack app that allows users to generate travel suggestions and itineraries based on their preferences.  Powered by ChatGPT!",
-        "Link": "https://travelaiapp.onrender.com",
+        "Type": "GAME",
+        "Team": "SOLO",
+        "Name": "War Guy",
+        "Description": "A simple galaga-like shoot 'em up game crafted in Godot.  Made in 1 week for a local game jam!",
+        "Link": "https://coolturtle.itch.io/war-guy",
         "Resources": [
-          "OpenAI",
-          "JavaScript",
-          "MERN"
+          "Godot",
+          "GDScript"
         ]
       },
       {
         "ID": "2",
-        "Type": "APP",
-        "Team": "SOLO",
-        "Name": "Webium",
-        "Description": "A clone of the popular article sharing website Medium, this site allows users to read and write articles.",
-        "Link": "https://webium.onrender.com",
+        "Type": "GAME",
+        "Team": "GROUP",
+        "Name": "Cleaning With Clanker",
+        "Description": "A spooky, short and sweet horror game where you try to escape a haunted space lab.",
+        "Link": "https://the-benbot.itch.io/cleaning-with-clanker",
         "Resources": [
-          "JavaScript",
-          "React",
-          "Rails"
+          "Godot",
+          "GDScript"
         ]
       },
       {
